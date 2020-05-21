@@ -10,7 +10,7 @@ _Locators = {
     By.CLASS_NAME: ["class_name", "class"],
     By.CSS_SELECTOR: ["css_selector", "css"],
 }
-
+# print("-------")
 
 def __get_locators(_):
     result = {}
