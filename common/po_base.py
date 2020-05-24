@@ -1,7 +1,3 @@
-"""
-@author Ymangz
-
-"""
 from time import sleep
 from typing import List
 

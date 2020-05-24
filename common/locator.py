@@ -10,7 +10,6 @@ _Locators = {
     By.CLASS_NAME: ["class_name", "class"],
     By.CSS_SELECTOR: ["css_selector", "css"],
 }
-# print("-------")
 
 def __get_locators(_):
     result = {}
@@ -47,6 +46,8 @@ def get_locator(locator: dict):
 
 if __name__ == '__main__':
     print(Locators.items())
+
+
     print(get_locator({'x': 'xpath'}))
     print(get_locator({"css":"css selector"}))
     print(get_locator({"css":"locator"}))

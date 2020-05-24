@@ -9,6 +9,17 @@ from config import Driver_Path
 
 page = None
 
+""" 
+此方法是每次都清除浏览器缓存的
+@pytest.fixture(scope="session")
+def login_as(browser):
+    def _login_as(a,p):
+        with allure.step("登陆"):
+            _page = pm("LoginPage")(browser)
+            _page._clear_cache()
+            return _page.login(a,p)
+    return _login_as
+"""
 
 @pytest.fixture(scope="session")
 def login_as(browser):

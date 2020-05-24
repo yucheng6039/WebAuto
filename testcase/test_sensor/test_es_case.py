@@ -13,7 +13,7 @@ from pages.LoginPage import LoginPage
 from time import sleep
 from pages.sensor_page.CreateEsPage import CreateEsPage
 @pytest.fixture(scope="module")
-def to_ec(login_as):
+def sign_in(login_as):
     page=login_as("admin","admin123")
     page.click_platform("指标解析中心")
     yield page
@@ -24,15 +24,19 @@ class TestEsCase:
         a= 5
         assert a==5
 
-    def test_login_success(self, to_ec):
-        # page = login_as("admin", "admin123")
-        # page: IndexPage
-        # page.click_platform("指标解析中心")
+    def test_login_success(self, sign_in):
         # page.screenshot_in_allure()
-        print(to_ec)
-        sleep(10)
 
-        page: IndexPage
+        print("打印添加数据源-----0---")
+        # page: CreateEsPage
+        page=CreateEsPage(sign_in)
+        page.click_source()
+        page.click_add()
+
+        # CreateEsPage().click_source()
+        sleep(5)
+
+
 
 
 
