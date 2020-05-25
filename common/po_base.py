@@ -1,11 +1,9 @@
 from time import sleep
 from typing import List
-
 import allure
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support import expected_conditions as EC
-
 from common.page_action import PageAction
 from config import Start_Url
 

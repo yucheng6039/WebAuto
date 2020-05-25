@@ -32,6 +32,7 @@ class TestLogHome(object):
         page.screenshot_in_allure()
         assert page.sidebar_text("首页") == "首页"
 
+
     def test_case(self,sign_in):
         page = LogHome(sign_in)
         page.click_sidebar_element("业务墙")
