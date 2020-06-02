@@ -1,6 +1,6 @@
 import allure
 import pytest
-from pages.loganalysiscenter_page.data_basecollection import LogHome
+from pages.loganalysiscenter_page.database_collection import LogHome
 from common.po_base import El
 from common.po_base import Page
 from pages.IndexPage import IndexPage
