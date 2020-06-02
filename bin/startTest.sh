@@ -9,5 +9,5 @@
 #allure serve -h 0.0.0.0 -p 12349 ../report/xml/
 
 # run 日志精析平台的test_log_home.py
-py.test "../testcase/test_oganalysiscenter/test_log_home.py" --alluredir ../report/xml  --html=../report/report.html --self-contained-html
-allure serve -h 0.0.0.0 -p 12349 ../report/xml/
+py.test "../testcase/test_loganalysiscenter/"
+#allure serve -h 0.0.0.0 -p 12349 ../report/xml/
