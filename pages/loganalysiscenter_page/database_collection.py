@@ -32,6 +32,9 @@ class LogHome(Page):
     def click_element(self,v):
          self.click(x=v)
          return self
+    def return_name(self,v):
+        key = El("任务名称", x=f"//a[text()='{v}']")
+        return key
 
     def random_str(self,num=6):
         uln = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'

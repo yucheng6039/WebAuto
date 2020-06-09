@@ -16,6 +16,8 @@ def sign_in(login_as):
 @allure.feature("文件采集")
 class TestLogHome(object):
     @allure.title("创建文件采集任务")
+
+    @allure.step("这是一个文件采集步骤")
     def test_home(self,sign_in):
         page = LogHome(sign_in)
         page.click_sidebar_element('全局')
@@ -25,14 +27,17 @@ class TestLogHome(object):
         page.click_element("//button[text()=' 创建']")
         #page.click_element()
         page.click_element("//li[text()='文件和目录']")
-        page.key1.send_keys(page.random_str())
+        name = page.random_str()
+        page.key1.send_keys(name)
         page.click_element("//a[text()='高级配置 ']")
         page.click_element("//span[text()=' Windows ']")
         page.click_element("//span[text()=' AIX ']")
         page.click_element("//span[text()=' Linux ']")
         page.key2.send_keys('192.168.31.176')
-        page.click_element("//tbody/tr[2]/td[1]/div/label/span/span")
+        page.click_element("//tbody/tr[1]/td[1]/div/label/span/span")
         page.key3.send_keys("/data01/3.0app/mave/logs/*")
         page.click_element("//button[text()='添加采集']")
-        sleep(2)
         page.click_element("//button[text()='保存']")
+
+        sleep(2)
+        assert page.return_name(name) != '',"任务不存在"

@@ -13,6 +13,8 @@ class LogHome(Page):
     sidebar_element = El("侧边栏菜单", x="//span[text()='首页']")
     key1 = El("任务名", x="//input[@placeholder='请输入任务名称']")
     key2 = El("数据源", css="//input[@placeholder='输入主机名、IP地址或类型']")
+    key3= El("字段名",x="//input[@aria-activedescendant='el-autocomplete-21-item--1']")
+    key4 = El("解构模式",x="//textarea[@class='el-textarea__inner' and @rows='2']")
     #key3 = El("路径",x="//input[@placeholder=\"请填写文件路径，多路径以';'间隔\"]")
     # 也可以封装个函数 传侧边栏的名称
     def click_sidebar_element(self, v):
@@ -32,6 +34,9 @@ class LogHome(Page):
          self.click(css=v)
          return self
 
+    def return_name(self,v):
+        key = El("任务名称", x=f"//a[text()='{v}']")
+        return key
 
     def random_str(self,num=6):
         uln = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'

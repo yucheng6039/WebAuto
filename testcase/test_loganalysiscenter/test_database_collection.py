@@ -29,7 +29,8 @@ class TestLogHome(object):
         page.key3.send_keys("itoa")
         page.key4.send_keys("root")
         page.key5.send_keys("MySQL@123")
-        page.key6.send_keys(page.random_str())
+        name=page.random_str()
+        page.key6.send_keys(name)
         page.click_element("//button[text()='连接测试']")
         page.key7.send_keys('select * from input')
         page.click_element("//button[text()='数据预览']")
@@ -39,8 +40,8 @@ class TestLogHome(object):
         page.click_element("//ul[@id='el-autocomplete-9']/li[1]")
         page.key8.send_keys('*/1 * * * *')
         page.click_element("//button[text()='保存']")
+        assert page.return_name(name) !='',"任务不存在"
 
-        sleep(5)
 
 if __name__ =="__main__":
     pytest.main("testcase/test_loganalysiscenter/test_database_collection.py","-s")
