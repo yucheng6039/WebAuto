@@ -1,5 +1,7 @@
 import allure
 import pytest
+
+from conftest import set_options
 from pages.loganalysiscenter_page.custom_resolution import LogHome
 from common.po_base import El
 from common.po_base import Page
@@ -15,6 +17,7 @@ def sign_in(login_as):
     yield page
 @allure.feature("自定义解析")
 class TestLogHome(object):
+
     @allure.title("创建一个自定义解析")
     def test_home(self,sign_in):
         page = LogHome(sign_in)
