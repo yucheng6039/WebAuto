@@ -31,7 +31,13 @@ class TestLogHome(object):
         page.key5.send_keys("MySQL@123")
         name=page.random_str()
         page.key6.send_keys(name)
+        page.click_css_element(".select .el-input__inner")  # 点击预估日流量
+        page.click_element("//li/span[text()='200']")  # 点击200G
+        page.click_css_element(".select .el-input__inner")
+        page.click_element("//li/span[text()='1']")  # 点击1G
+        sleep(1)
         page.click_element("//button[text()='连接测试']")
+        sleep(1)
         page.key7.send_keys('select * from input')
         page.click_element("//button[text()='数据预览']")
         sleep(2)
@@ -43,5 +49,5 @@ class TestLogHome(object):
         assert page.return_name(name) !='',"任务不存在"
 
 
-if __name__ =="__main__":
-    pytest.main("testcase/test_loganalysiscenter/test_mysql_collection.py","-s")
+# if __name__ =="__main__":
+#     pytest.main("testcase/test_loganalysiscenter/test_mysql_collection.py","-s")

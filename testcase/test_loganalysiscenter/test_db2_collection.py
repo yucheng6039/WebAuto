@@ -15,7 +15,7 @@ def sign_in(login_as):
     yield page
 @allure.feature("db2数据库采集")
 class TestLogHome(object):
-    @allure.title("创建db2L采集任务")
+    @allure.title("创建db2采集任务")
     def test_home(self,sign_in):
         page = LogHome(sign_in)
         page.click_sidebar_element('全局')
@@ -32,7 +32,13 @@ class TestLogHome(object):
         page.key5.send_keys("Db2@123")
         name=page.random_str()
         page.key6.send_keys(name)
+        page.click_css_element(".select .el-input__inner")  # 点击预估日流量
+        page.click_element("//li/span[text()='200']")  # 点击200G
+        page.click_css_element(".select .el-input__inner")
+        page.click_element("//li/span[text()='1']")  # 点击1G
+        sleep(1)
         page.click_element("//button[text()='连接测试']")
+        sleep(1)
         page.key7.send_keys('select * from 基本信息')
         page.click_element("//button[text()='数据预览']")
         sleep(2)
@@ -45,5 +51,5 @@ class TestLogHome(object):
         assert page.return_name(name) !='',"任务不存在"
 
 
-if __name__ =="__main__":
-    pytest.main("testcase/test_loganalysiscenter/test_mysql_collection.py","-s")
+# if __name__ =="__main__":
+#     pytest.main("testcase/test_loganalysiscenter/test_mysql_collection.py","-s")

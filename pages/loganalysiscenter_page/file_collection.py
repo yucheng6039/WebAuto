@@ -29,6 +29,10 @@ class LogHome(Page):
          self.click(x=v)
          return self
 
+    def click_css_element(self,v):
+         self.click(css=v)
+         return self
+
     def random_str(self,num=6):
         uln = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
         rs = random.sample(uln, num)  # 生成一个 指定位数的随机字符串
@@ -40,7 +44,7 @@ class LogHome(Page):
         key4 = El("任务名称", x=f"//a[text()='{v}']")
         return key4
 
-if __name__ == "__main__":
-    # te =LogHome(Page(Chrome(Driver_Path)))
-    # print(te.sidebar_element)
-    pass
+# if __name__ == "__main__":
+#     # te =LogHome(Page(Chrome(Driver_Path)))
+#     # print(te.sidebar_element)
+#     pass

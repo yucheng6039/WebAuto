@@ -1,6 +1,6 @@
 import allure
 import pytest
-from pages.loganalysiscenter_page.database_collection import LogHome
+from pages.loganalysiscenter_page.sql_server_collection import LogHome
 from common.po_base import El
 from common.po_base import Page
 from pages.IndexPage import IndexPage
@@ -13,9 +13,9 @@ def sign_in(login_as):
     page=login_as("yuchengcheng5","yu123456")
     page.click_platform("日志精析中心")
     yield page
-@allure.feature("Mysql数据库采集")
+@allure.feature("SQL_server数据库采集")
 class TestLogHome(object):
-    @allure.title("创建MySQL采集任务")
+    @allure.title("创建sql_server采集任务")
     def test_home(self,sign_in):
         page = LogHome(sign_in)
         page.click_sidebar_element('全局')
@@ -24,15 +24,22 @@ class TestLogHome(object):
         page.click_element("//a[text()='数据接入']")
         page.click_element("//button[text()=' 创建']")
         page.click_element("//li[text()='关系型数据库']")
-        page.key1.send_keys("192.168.31.187")
-        page.key2.send_keys("3306")
-        page.key3.send_keys("itoa")
-        page.key4.send_keys("root")
-        page.key5.send_keys("MySQL@123")
+        page.click_element("//span[text()='Microsoft SQL Server']")
+        page.key1.send_keys("192.168.21.21")
+        page.key2.send_keys("1433")
+        page.key3.send_keys("autotest")
+        page.key4.send_keys("sa")
+        page.key5.send_keys("Sql@123")
         name=page.random_str()
         page.key6.send_keys(name)
+        page.click_css_element(".select .el-input__inner")  # 点击预估日流量
+        page.click_element("//li/span[text()='200']")  # 点击200G
+        page.click_css_element(".select .el-input__inner")
+        page.click_element("//li/span[text()='1']")  # 点击1G
+        sleep(1)
         page.click_element("//button[text()='连接测试']")
-        page.key7.send_keys('select * from input')
+        sleep(1)
+        page.key7.send_keys('select * from 其它信息')
         page.click_element("//button[text()='数据预览']")
         sleep(2)
         page.click_element("//span[text()='全量同步']")
@@ -40,8 +47,9 @@ class TestLogHome(object):
         page.click_element("//ul[@id='el-autocomplete-9']/li[1]")
         page.key8.send_keys('*/1 * * * *')
         page.click_element("//button[text()='保存']")
+        sleep(1)
         assert page.return_name(name) !='',"任务不存在"
 
 
-if __name__ =="__main__":
-    pytest.main("testcase/test_loganalysiscenter/test_database_collection.py","-s")
+# if __name__ =="__main__":
+#     pytest.main("testcase/test_loganalysiscenter/test_mysql_collection.py","-s")

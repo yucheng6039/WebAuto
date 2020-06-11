@@ -45,7 +45,7 @@ class LogHome(Page):
         b = ''.join(rs + str(a).split("-"))  # 生成将随机字符串 与 uuid拼接
         return b  # 返回随机字符串
 
-if __name__ == "__main__":
-    # te =LogHome(Page(Chrome(Driver_Path)))
-    # print(te.sidebar_element)
-    pass
+# if __name__ == "__main__":
+#     # te =LogHome(Page(Chrome(Driver_Path)))
+#     # print(te.sidebar_element)
+#     pass
