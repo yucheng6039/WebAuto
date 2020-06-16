@@ -34,11 +34,12 @@ class TestLogHome(object):
         page.click_element("//span[text()=' AIX ']")
         page.click_element("//span[text()=' Linux ']")
         page.click_element("//span[text()=' AIX ']")
-        page.key2.send_keys('192.168.31.219')
+        page.key2.send_keys('192.168.21.214')
         page.click_element("//tbody/tr[1]/td[1]/div/label/span/span")
-        page.key3.send_keys("C:\3.4-mave\mave\logs")
+        page.key3.send_keys("/mave/logs/*")
         page.click_element("//button[text()='添加采集']")
         page.click_element("//button[text()='保存']")
 
         sleep(2)
         assert page.return_name(name) != '',"任务不存在"
+        sleep(1)

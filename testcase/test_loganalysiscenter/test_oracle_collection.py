@@ -1,6 +1,6 @@
 import allure
 import pytest
-from pages.loganalysiscenter_page.db2_collection import LogHome
+from pages.loganalysiscenter_page.oracle_collection import LogHome
 from common.po_base import El
 from common.po_base import Page
 from pages.IndexPage import IndexPage
@@ -13,9 +13,9 @@ def sign_in(login_as):
     page=login_as("yuchengcheng5","yu123456")
     page.click_platform("日志精析中心")
     yield page
-@allure.feature("db2数据库采集")
+@allure.feature("oracle数据库采集")
 class TestLogHome(object):
-    @allure.title("创建db2采集任务")
+    @allure.title("创建oracle采集任务")
     def test_home(self,sign_in):
         page = LogHome(sign_in)
         page.click_sidebar_element('全局')
@@ -24,12 +24,12 @@ class TestLogHome(object):
         page.click_element("//a[text()='数据接入']")
         page.click_element("//button[text()=' 创建']")
         page.click_element("//li[text()='关系型数据库']")
-        page.click_element("//span[text()='IBM DB2']")
-        page.key1.send_keys("192.168.31.53")
-        page.key2.send_keys("50000")
-        page.key3.send_keys("sample")
-        page.key4.send_keys("db2inst1")
-        page.key5.send_keys("Db2@123")
+        page.click_element("//span[text()='Oracle']")
+        page.key1.send_keys("192.168.32.37")
+        page.key2.send_keys("49161")
+        page.key3.send_keys("xe")
+        page.key4.send_keys("system")
+        page.key5.send_keys("oracle")
         name=page.random_str()
         page.key6.send_keys(name)
         page.click_css_element(".select .el-input__inner")  # 点击预估日流量
@@ -39,7 +39,7 @@ class TestLogHome(object):
         sleep(1)
         page.click_element("//button[text()='连接测试']")
         sleep(1)
-        page.key7.send_keys('select * from 基本信息')
+        page.key7.send_keys("select * from \"user\"")
         page.click_element("//button[text()='数据预览']")
         sleep(2)
         page.click_element("//span[text()='全量同步']")

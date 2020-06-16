@@ -46,7 +46,9 @@ class TestLogHome(object):
         page.click_element("//ul[@id='el-autocomplete-9']/li[1]")
         page.key8.send_keys('*/1 * * * *')
         page.click_element("//button[text()='保存']")
+        sleep(1)
         assert page.return_name(name) !='',"任务不存在"
+        sleep(1)
 
 
 # if __name__ =="__main__":
