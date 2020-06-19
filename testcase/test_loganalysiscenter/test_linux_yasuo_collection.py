@@ -1,6 +1,6 @@
 import allure
 import pytest
-from pages.loganalysiscenter_page.linux_file_collection import LogHome
+from pages.loganalysiscenter_page.linux_yasuo_collection import LogHome
 from common.po_base import El
 from common.po_base import Page
 from pages.IndexPage import IndexPage
@@ -33,16 +33,11 @@ class TestLogHome(object):
         page.click_element("//span[text()=' Windows ']")
         page.click_element("//span[text()=' AIX ']")
         page.click_element("//span[text()=' Linux ']")
-        page.key2.send_keys('192.168.31.176')
+        page.key2.send_keys('192.168.31.189')
+        page.click_element("//span[text()='归档文件']")
         page.click_element("//tbody/tr[1]/td[1]/div/label/span/span")
-        page.key3.send_keys("/data01/3.0app/mave/logs/*")
+        page.key3.send_keys("/root/wmk/yasuo")
         page.click_element("//button[text()='添加采集']")
-        page.click_element("//a[text()=' 采集高级配置 ']")
-        page.click_element("//a[@class='pointer fc-primary' and text()='0小时']") #点击一小时
-        page.click_css_element(".width-150> .el-input-number__increase")#点击向上加1按钮
-        page.click_css_element(".el-button.ml-5")#点击确认
-        page.click_element("//*[@id='app']/div[2]/div[2]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[2]/td[2]/div/a") #点击仅采集增量数据-关闭
-        page.click_css_element(".el-button.ml-5")  # 点击确认
         page.click_element("//button[text()='保存']")
         sleep(2)
         assert page.return_name(name) != '',"任务不存在"

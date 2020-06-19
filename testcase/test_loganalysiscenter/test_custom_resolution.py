@@ -33,10 +33,11 @@ class TestLogHome(object):
         page.key1.send_keys(name)  #输入任务名字
         page.click_css_element(".el-select__input")  #选择任务源
         sleep(1)
-        page.click_element("//span[text()='yucc_0608_02(文件和目录)']")  #点击任务源
+        page.click_element("//span[text()='yucc_0619_05(文件和目录)']")  #点击任务源
         # page.click_element("//ul[@class='el-scrollbar__view el-select-dropdown__list']/li[40]")  #选取某个
         sleep(1)
         page.click_element("//button[text()='预览结果']")  #点击预览结果
+        page.click_element("//span[text()='数据输出']")
         page.click_css_element(".select .el-input__inner") #点击预估日流量
         page.click_element("//li/span[text()='200']")  #点击200G
         page.click_css_element(".select .el-input__inner")
