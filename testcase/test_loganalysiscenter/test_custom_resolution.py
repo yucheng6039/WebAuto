@@ -33,7 +33,7 @@ class TestLogHome(object):
         page.key1.send_keys(name)  #输入任务名字
         page.click_css_element(".el-select__input")  #选择任务源
         sleep(1)
-        page.click_element("//span[text()='yucc_0619_05(文件和目录)']")  #点击任务源
+        page.click_element("//span[text()='yucc_0628_02(文件和目录)']")  #点击任务源
         # page.click_element("//ul[@class='el-scrollbar__view el-select-dropdown__list']/li[40]")  #选取某个
         sleep(1)
         page.click_element("//button[text()='预览结果']")  #点击预览结果
@@ -50,6 +50,6 @@ class TestLogHome(object):
         page.key4.send_keys("%{a},%{b},%{c},%{d},%{e},%{f},%{g}")
         page.click_element("//button[text()='预览结果']")
         page.click_element("//button[text()='保存']")
-        sleep(1)
+        sleep(3)
         assert page.return_name(name) != '', "任务不存在"
         sleep(1)

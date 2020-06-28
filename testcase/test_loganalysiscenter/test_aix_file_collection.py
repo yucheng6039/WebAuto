@@ -48,4 +48,4 @@ class TestLogHome(object):
         page.click_element("//button[text()='保存']")
         sleep(2)
         assert page.return_name(name) != '',"任务不存在"
-        sleep(1)
+        sleep(3)

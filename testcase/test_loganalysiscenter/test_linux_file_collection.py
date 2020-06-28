@@ -44,6 +44,6 @@ class TestLogHome(object):
         page.click_element("//*[@id='app']/div[2]/div[2]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[2]/td[2]/div/a") #点击仅采集增量数据-关闭
         page.click_css_element(".el-button.ml-5")  # 点击确认
         page.click_element("//button[text()='保存']")
-        sleep(2)
+        sleep(3)
         assert page.return_name(name) != '',"任务不存在"
-        sleep(1)
+        sleep(3)
