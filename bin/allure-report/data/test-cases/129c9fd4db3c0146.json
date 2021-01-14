@@ -1,0 +1,117 @@
+{
+  "uid" : "129c9fd4db3c0146",
+  "name" : "首页测试",
+  "fullName" : "testcase.test_loganalysiscenter.test_user.test_1_create_user.TestLogHome#test_home",
+  "historyId" : "ab1ad1d25d71591994ba9d8c1cba7753",
+  "time" : {
+    "start" : 1610592962450,
+    "stop" : 1610593040535,
+    "duration" : 78085
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "browser",
+    "time" : {
+      "start" : 1610592959303,
+      "stop" : 1610592962449,
+      "duration" : 3146
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "清除缓存并打开主页",
+      "time" : {
+        "start" : 1610592962450,
+        "stop" : 1610593040535,
+        "duration" : 78085
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "browser",
+        "value" : "<common.po_base.Page object at 0x00000287A2DD0340>"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "browser::0",
+    "time" : {
+      "start" : 1610593040535,
+      "stop" : 1610593042655,
+      "duration" : 2120
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "首页测试"
+  }, {
+    "name" : "parentSuite",
+    "value" : "testcase.test_loganalysiscenter.test_user"
+  }, {
+    "name" : "suite",
+    "value" : "test_1_create_user"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLogHome"
+  }, {
+    "name" : "host",
+    "value" : "LAPTOP-5GKE6HL0"
+  }, {
+    "name" : "thread",
+    "value" : "19108-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcase.test_loganalysiscenter.test_user.test_1_create_user"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "129c9fd4db3c0146.json",
+  "parameterValues" : [ ]
+}

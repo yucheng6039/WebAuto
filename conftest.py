@@ -23,11 +23,11 @@ def login_as(browser):
 
 @pytest.fixture(scope="session")
 def login_as(browser):
-    def _login_as(a,p):
+    def _login_as():
         with allure.step("登陆"):
             _page = pm("LoginPage")(browser)
             _page._clear_cache()
-            return _page.login(a,p)
+            return _page.login()
     return _login_as
 
 
@@ -38,6 +38,7 @@ def browser():
         options = Options()
         # options.add_argument('--headless')
         options.add_argument('--start-maximized')
+        options.add_argument("--kiosk")
         options.add_argument('--ignore-certificate-errors')  # 忽略https报错
         options.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
         options.add_experimental_option("excludeSwitches", ['enable-automation'])
@@ -63,3 +64,20 @@ def pytest_runtest_makereport(item, call):
         # 失败时进行错误截图添加
         if page is not None:
             page.screenshot_in_allure("错误截图")
+@pytest.fixture(scope='session')
+def set_options(is_headless=True):
+    """设置启动的浏览器参数是否为静默模式，默认是True
+    :param is_headless: 布尔
+    """
+    option = page.ChromeOptions()
+    option.add_experimental_option("useAutomationExtension", False)
+    option.add_experimental_option("excludeSwitches", ['enable-automation'])
+    if is_headless:
+        option.add_argument('--headless')
+        option.add_argument('--window-size=1920x1080')
+        option.add_argument('--disable-gpu')
+        option.add_argument('--no-sandbox')
+        browser_driver = page.Chrome(options=option)
+    else:
+        browser_driver = page.Chrome(options=option)
+    return browser_driver

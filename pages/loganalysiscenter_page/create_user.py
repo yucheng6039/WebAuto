@@ -10,9 +10,8 @@ from config import Driver_Path
 
 class LogHome(Page):
     # 可以这么写单个元素
-    sidebar_element = El("侧边栏菜单", x="//span[text()='首页']")
-    key1 = El("账号", x="//input[@placeholder='包含中、英文，长度在1-15字符以内']")
-    key2 = El("密码", x="//input[@placeholder='包含数字、字母和符号，长度至少为6位']")
+    key1 = El("接受cookie", x="//*[@id='accept-cookies-button']")
+    key2 = El("密码", x="#source > div:nth-child(7)")
     key3 = El("确认密码",x="//input[@placeholder='请输入']")
     key4 = El("显示名",x="//input[@placeholder='包含中、英文和数字，长度在1-15字符以内']")
 

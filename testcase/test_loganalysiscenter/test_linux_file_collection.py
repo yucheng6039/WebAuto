@@ -10,7 +10,7 @@ from time import sleep
 from pages.sensor_page.CreateEsPage import CreateEsPage
 @pytest.fixture(scope="module")
 def sign_in(login_as):
-    page=login_as("yuchengcheng5","yu123456")
+    page=login_as("yuchengcheng10","yu123456")
     page.click_platform("日志精析中心")
     yield page
 @allure.feature("linux文件采集")

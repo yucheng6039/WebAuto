@@ -48,6 +48,9 @@ class Page:
             """document.querySelector('settings-ui').shadowRoot.querySelector('#main').shadowRoot.querySelector('settings-basic-page').shadowRoot.querySelector("#basicPage settings-section[section='privacy'] settings-privacy-page").shadowRoot.querySelector('settings-clear-browsing-data-dialog').shadowRoot.querySelector('#clearBrowsingDataConfirm').click()""")
         self.driver.get(Start_Url)
 
+    def start(self):
+        self.driver.get("https://spectrum-test.cytekbio.com/")
+
     def find_element(self, *, mode="L", **locator):
         """找到元素后会自动标记"""
         return self.action.find_element(mode=mode, **locator)

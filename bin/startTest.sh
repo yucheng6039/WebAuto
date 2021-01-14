@@ -3,11 +3,17 @@
 #pytest ../ --html=../report/report.html --self-contained-html
 
 
-##allure generate ../report/xml -o ../report/xml/ --clean
-#pytest ../testcase --alluredir ../report/xml  --html=../report/report.html --self-contained-html
+#allure generate ../report/xml -o ../report/xml/ --clean
+#pytest ../testcase/test_loganalysiscenter/
+#
+#
+#allure serve -h 0.0.0.0 -p 12346 ../report/xml/
 
-#allure serve -h 0.0.0.0 -p 12349 ../report/xml/
+# run 日志精析平台的test_log_home.pyiota
+#py.test "../testcase/test_loganalysiscenter/"
+#allure serve -h 0.0.bin/startTest.sh:130.0 -p 12349 ../report/xml/
 
-# run 日志精析平台的test_log_home.py
-py.test "../testcase/test_loganalysiscenter/"
-#allure serve -h 0.0.0.0 -p 12349 ../report/xml/
+
+py.test --count=40 --repeat-scope=session -s  ../testcase/test_loganalysiscenter/test_user/* --alluredir ../report/xml --clean-alluredir
+
+allure serve -h 0.0.0.0 -p 12347 ../report/xml/

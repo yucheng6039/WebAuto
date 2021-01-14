@@ -26,7 +26,7 @@ class LogHome(Page):
         return self
 
     def sidebar_text(self,v):
-        text = self.sidebar_element.find_element_by_xpath(f"//span[text()='{v}']").text
+        text = self.find_element_by_xpath(f"//span[text()='{v}']").text
         return text
 
     def click_element(self,v):

@@ -1,0 +1,26 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "LAPTOP-5GKE6HL0",
+    "children" : [ {
+      "name" : "19108-MainThread",
+      "children" : [ {
+        "name" : "首页测试",
+        "uid" : "129c9fd4db3c0146",
+        "parentUid" : "0c628269738e6ce151b5798c90ef9a55",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610592962450,
+          "stop" : 1610593040535,
+          "duration" : 78085
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0c628269738e6ce151b5798c90ef9a55"
+    } ],
+    "uid" : "dc62aca6ce3cbd69ee3cfef314a41da6"
+  } ]
+}

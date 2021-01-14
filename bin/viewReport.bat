@@ -1,0 +1,1 @@
+allure open -h localhost -p 12347 ../report/report

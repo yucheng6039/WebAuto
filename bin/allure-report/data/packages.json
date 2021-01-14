@@ -1,0 +1,22 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "testcase.test_loganalysiscenter.test_user.test_1_create_user",
+    "children" : [ {
+      "name" : "首页测试",
+      "uid" : "129c9fd4db3c0146",
+      "parentUid" : "1d8ccad033cbe67ea26c3f0729b19993",
+      "status" : "passed",
+      "time" : {
+        "start" : 1610592962450,
+        "stop" : 1610593040535,
+        "duration" : 78085
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "testcase.test_loganalysiscenter.test_user.test_1_create_user"
+  } ]
+}

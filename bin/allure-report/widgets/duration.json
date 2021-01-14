@@ -1,0 +1,11 @@
+[ {
+  "uid" : "129c9fd4db3c0146",
+  "name" : "首页测试",
+  "time" : {
+    "start" : 1610592962450,
+    "stop" : 1610593040535,
+    "duration" : 78085
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

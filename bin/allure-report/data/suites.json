@@ -1,0 +1,30 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "testcase.test_loganalysiscenter.test_user",
+    "children" : [ {
+      "name" : "test_1_create_user",
+      "children" : [ {
+        "name" : "TestLogHome",
+        "children" : [ {
+          "name" : "首页测试",
+          "uid" : "129c9fd4db3c0146",
+          "parentUid" : "dc3c6a046b3e090564814cdc0626c21f",
+          "status" : "passed",
+          "time" : {
+            "start" : 1610592962450,
+            "stop" : 1610593040535,
+            "duration" : 78085
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "dc3c6a046b3e090564814cdc0626c21f"
+      } ],
+      "uid" : "0811a6fb6538610503d09dc65ac9e208"
+    } ],
+    "uid" : "1067ab912a54f5ba47189a80514a2152"
+  } ]
+}
