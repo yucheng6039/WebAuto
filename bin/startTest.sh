@@ -4,13 +4,13 @@
 
 
 #allure generate ../report/xml -o ../report/xml/ --clean
-#pytest ../testcase/test_loganalysiscenter/
+#pytest ../testcase/test_web/
 #
 #
 #allure serve -h 0.0.0.0 -p 12346 ../report/xml/
 
 # run 日志精析平台的test_log_home.pyiota
-#py.test "../testcase/test_loganalysiscenter/"
+#py.test "../testcase/test_web/"
 #allure serve -h 0.0.bin/startTest.sh:130.0 -p 12349 ../report/xml/
 
 

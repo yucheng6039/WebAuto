@@ -37,15 +37,15 @@ class Page:
 
     def _clear_cache(self):
         """chrome清除缓存，返回登陆界面"""
-        self.driver.get("chrome://settings/privacy")
+        ### self.driver.get("chrome://settings/privacy")
         # 打开清除缓存界面
         # shadow-root 解决   https://developer.mozilla.org/zh-CN/docs/Web/API/Element/shadowRoot
         sleep(0.5)
-        self.driver.execute_script(
-            """document.querySelector('settings-ui').shadowRoot.querySelector('#main').shadowRoot.querySelector('settings-basic-page').shadowRoot.querySelector("#basicPage settings-section[section='privacy'] settings-privacy-page").shadowRoot.querySelector('#pages div #clearBrowsingData').click()""")
+        ###self.driver.execute_script(
+           ### """document.querySelector('settings-ui').shadowRoot.querySelector('#main').shadowRoot.querySelector('settings-basic-page').shadowRoot.querySelector("#basicPage settings-section[section='privacy'] settings-privacy-page").shadowRoot.querySelector('#pages div #clearBrowsingData').click()""")
         sleep(0.5)
-        self.driver.execute_script(
-            """document.querySelector('settings-ui').shadowRoot.querySelector('#main').shadowRoot.querySelector('settings-basic-page').shadowRoot.querySelector("#basicPage settings-section[section='privacy'] settings-privacy-page").shadowRoot.querySelector('settings-clear-browsing-data-dialog').shadowRoot.querySelector('#clearBrowsingDataConfirm').click()""")
+        ###self.driver.execute_script(
+           ### """document.querySelector('settings-ui').shadowRoot.querySelector('#main').shadowRoot.querySelector('settings-basic-page').shadowRoot.querySelector("#basicPage settings-section[section='privacy'] settings-privacy-page").shadowRoot.querySelector('settings-clear-browsing-data-dialog').shadowRoot.querySelector('#clearBrowsingDataConfirm').click()""")
         self.driver.get(Start_Url)
 
     def start(self):

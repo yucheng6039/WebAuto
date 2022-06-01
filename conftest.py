@@ -36,9 +36,9 @@ def browser():
     global page
     if page is None:
         options = Options()
-        # options.add_argument('--headless')
-        options.add_argument('--start-maximized')
-        options.add_argument("--kiosk")
+        #options.add_argument('--headless')
+        #options.add_argument('--start-maximized')
+        #options.add_argument("--kiosk")
         options.add_argument('--ignore-certificate-errors')  # 忽略https报错
         options.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
         options.add_experimental_option("excludeSwitches", ['enable-automation'])
